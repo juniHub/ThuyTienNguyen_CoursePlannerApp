@@ -20,7 +20,7 @@ namespace ThuyTienNguyen_CoursePlannerApp.Views
         public void SetData(Assessment assessment)
         {
             navTitle.Text = assessment.Title;
-            AssessmentDateRange.Text = $"{assessment.StartDate.ToString("MM-dd-yyyy", DateTimeFormatInfo.InvariantInfo)} - {assessment.EndDate.ToString("MM-dd-yyyy", DateTimeFormatInfo.InvariantInfo)}";
+            AssessmentDateRange.Text = $"Start date: {assessment.StartDate.ToString("MM-dd-yyyy", DateTimeFormatInfo.InvariantInfo)} - End date: {assessment.EndDate.ToString("MM-dd-yyyy", DateTimeFormatInfo.InvariantInfo)}";
             TypeSelection.Text = assessment.Type;
             notificationsEnabled.Text = assessment.EnableNotifications ? "ON" : "OFF";
         }
@@ -32,8 +32,14 @@ namespace ThuyTienNguyen_CoursePlannerApp.Views
 
         private async void DeleteButton_Clicked(object sender, EventArgs e)
         {
-            VMControls.deleteAssessmentFromAssessmentCollection(SelectedAssessment);
-            await Navigation.PopAsync();
+            if (await DisplayAlert("Confirm Deletion", $"Are you sure you want to delete {SelectedAssessment.Title}?", "Delete", "Cancel"))
+            {
+
+                VMControls.deleteAssessmentFromAssessmentCollection(SelectedAssessment);
+                await Navigation.PopAsync();
+            }
+
+          
         }
     }
 }

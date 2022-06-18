@@ -11,7 +11,7 @@
         </StackLayout>
     </NavigationPage.TitleView>
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout BackgroundColor="Beige">
             <StackLayout VerticalOptions="StartAndExpand">
                 <Label 
                     x:Name="AssessmentDateRange"

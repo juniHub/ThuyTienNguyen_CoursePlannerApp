@@ -21,7 +21,7 @@ namespace ThuyTienNguyen_CoursePlannerApp.Views
         {
             SelectedCourse = course;
             navTitle.Text = course.Title;
-            CourseDateRange.Text = $"{course.StartDate.ToString("MM-dd-yyyy", DateTimeFormatInfo.InvariantInfo)} - {course.EndDate.ToString("MM-dd-yyyy", DateTimeFormatInfo.InvariantInfo)}";
+            CourseDateRange.Text = $"Start date: {course.StartDate.ToString("MM-dd-yyyy", DateTimeFormatInfo.InvariantInfo)} - End date: {course.EndDate.ToString("MM-dd-yyyy", DateTimeFormatInfo.InvariantInfo)}";
             statusSelection.Text = course.Status;
             instructorsName.Text = course.InstructorName;
             instructorsPhone.Text = course.InstructorPhone;
@@ -47,8 +47,12 @@ namespace ThuyTienNguyen_CoursePlannerApp.Views
 
         private async void DeleteCourse_Clicked(object sender, EventArgs e)
         {
-            VMControls.deleteCourseFromCourseCollection(SelectedCourse);
-            await Navigation.PopAsync();
+            if (await DisplayAlert("Confirm Deletion", $"Are you sure you want to delete {SelectedCourse.Title}?", "Delete", "Cancel"))
+            {
+
+                VMControls.deleteCourseFromCourseCollection(SelectedCourse);
+                await Navigation.PopAsync();
+            }
         }
     }
 }

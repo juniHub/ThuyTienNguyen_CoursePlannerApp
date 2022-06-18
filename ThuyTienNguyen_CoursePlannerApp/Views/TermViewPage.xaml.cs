@@ -21,7 +21,7 @@ namespace ThuyTienNguyen_CoursePlannerApp.Views
         public void SetData(Term term)
         {
             navTitle.Text = term.Title;
-            TermDateRange.Text = $"{term.StartDate.ToString("MM-dd-yyyy", DateTimeFormatInfo.InvariantInfo)} - {term.EndDate.ToString("MM-dd-yyyy", DateTimeFormatInfo.InvariantInfo)}";
+            TermDateRange.Text = $"Start date: {term.StartDate.ToString("MM-dd-yyyy", DateTimeFormatInfo.InvariantInfo)} - End date: {term.EndDate.ToString("MM-dd-yyyy", DateTimeFormatInfo.InvariantInfo)}";
         }
 
         private async void AddCourse_Clicked(object sender, EventArgs e)
@@ -48,8 +48,11 @@ namespace ThuyTienNguyen_CoursePlannerApp.Views
 
         private async void DeleteTerm_Clicked(object sender, EventArgs e)
         {
-            VMControls.deleteTermFromTermCollection(SelectedTerm);
-            await Navigation.PopAsync();
+            if (await DisplayAlert("Confirm Deletion", $"Are you sure you want to delete {SelectedTerm.Title}?", "Delete", "Cancel"))
+            {
+                VMControls.deleteTermFromTermCollection(SelectedTerm);
+                await Navigation.PopAsync();
+            }
         }
 
         private async void Course_Clicked(object sender, EventArgs e)

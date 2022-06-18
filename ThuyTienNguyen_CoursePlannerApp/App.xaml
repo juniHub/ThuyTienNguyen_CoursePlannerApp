@@ -4,6 +4,9 @@
              x:Class="ThuyTienNguyen_CoursePlannerApp.App">
     <Application.Resources>
         <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="DarkBlue"/>
+            </Style>
             <Style x:Key="listItem" TargetType="Button">
                 <Setter Property="BorderWidth" Value="2" />
                 <Setter Property="BorderColor" Value="DarkBlue"/>
@@ -12,10 +15,18 @@
                 <Setter Property="Margin" Value="7, 7, 7, 0"/>
                 <Setter Property="BackgroundColor" Value="White"/>
             </Style>
-            <Style x:Key="regularButton" TargetType="Button">
-                <Setter Property="BackgroundColor" Value="LightSkyBlue"/>
+            <Style x:Key="addButton" TargetType="Button">
                 <Setter Property="BorderWidth" Value="1" />
                 <Setter Property="BorderColor" Value="White"/>
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="BackgroundColor" Value="#002F51"/>
+            </Style>
+            <Style x:Key="regularButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="DarkBlue"/>
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="BorderWidth" Value="1" />
+                <Setter Property="BorderColor" Value="DarkBlue"/>
             </Style>
             <Style x:Key="deleteButton" TargetType="Button">
                 <Setter Property="BackgroundColor" Value="Red"/>
@@ -23,18 +34,25 @@
                 <Setter Property="BorderWidth" Value="1" />
                 <Setter Property="BorderColor" Value="White"/>
             </Style>
+            <Style x:Key="cancelButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="LightYellow"/>
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="BorderWidth" Value="1" />
+                <Setter Property="BorderColor" Value="LightYellow"/>
+            </Style>
             <Style x:Key="pageTitle" TargetType="Label">
                 <Setter Property="VerticalTextAlignment" Value="Center"/>
                 <Setter Property="HorizontalTextAlignment" Value="Center"/>
-                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="TextColor" Value="#002F51"/>
                 <Setter Property="FontSize" Value="Title"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="Padding" Value="10"/>
             </Style>
             <Style x:Key="navPageTitle" TargetType="Label">
                 <Setter Property="VerticalTextAlignment" Value="Center"/>
                 <Setter Property="HorizontalTextAlignment" Value="Center"/>
                 <Setter Property="TextColor" Value="White"/>
-                <Setter Property="FontSize" Value="Title"/>
+                <Setter Property="FontSize" Value="Medium"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="Margin" Value="0, 0, 75, 0"/>
             </Style>
@@ -50,6 +68,8 @@
             <Style x:Key="dateRange" TargetType="Label">
                 <Setter Property="VerticalOptions" Value="StartAndExpand"/>
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+                <Setter Property="TextColor" Value="#002F51"/>
+                <Setter Property="FontSize" Value="Medium" />
                 <Setter Property="Margin" Value="10"/>
             </Style>
         </ResourceDictionary>

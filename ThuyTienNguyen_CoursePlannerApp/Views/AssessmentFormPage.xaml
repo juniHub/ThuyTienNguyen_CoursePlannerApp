@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ThuyTienNguyen_CoursePlannerApp.Views.AssessmentFormPage">
     <ContentPage.Content>
-        <StackLayout>
-            <StackLayout>
+        <StackLayout BackgroundColor="Gray">
+            <StackLayout VerticalOptions="Start">
                 <Label 
                         Text="Assessment" 
                         Style="{StaticResource modalTitle}"
@@ -45,7 +45,11 @@
                         Text="Save" 
                         Clicked="SaveEditButton_Clicked"
                 />
-                <Button Text="Cancel" Clicked="CancelButton_Clicked"/>
+                <Button 
+                     x:Name="CancelButton" 
+                     Style="{StaticResource cancelButton}"
+                     Text="Cancel" 
+                     Clicked="CancelButton_Clicked"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

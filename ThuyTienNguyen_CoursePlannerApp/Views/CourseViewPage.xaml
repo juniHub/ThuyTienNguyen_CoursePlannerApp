@@ -7,15 +7,15 @@
             <Style x:Key="assessmentButton" TargetType="Button">
                 <Setter Property="BackgroundColor" Value="#002F51"/>
                 <Setter Property="TextColor" Value="White"/>
-                <Setter Property="BorderWidth" Value="1" />
-                <Setter Property="BorderColor" Value="White"/>
+                <Setter Property="WidthRequest" Value="150"/>
+                <Setter Property="HorizontalOptions" Value="Start"/>
+                <Setter Property="Margin" Value="0,20,0,20"/>
             </Style>
             <Style x:Key="shareNotesButton" TargetType="Button">
                 <Setter Property="BackgroundColor" Value="#002F51"/>
                 <Setter Property="TextColor" Value="White"/>
                 <Setter Property="WidthRequest" Value="150"/>
-                <Setter Property="HorizontalOptions" Value="Center"/>
-                <Setter Property="CornerRadius" Value="15"/>
+                <Setter Property="HorizontalOptions" Value="End"/>
                 <Setter Property="Margin" Value="0,20,0,20"/>
             </Style>
         </ResourceDictionary>
@@ -31,25 +31,18 @@
     <ContentPage.Content>
         <ScrollView>
 
-            <StackLayout>
+            <StackLayout BackgroundColor="Beige">
                 <StackLayout VerticalOptions="StartAndExpand">
                     <Label 
                         x:Name="CourseDateRange"
                         Style="{StaticResource dateRange}"
                      />
-                    <StackLayout VerticalOptions="Start">
-                        <Button 
-                        Text="Course Assessments"
-                        Style="{StaticResource assessmentButton}"
-                        Clicked="CourseAssessments_Clicked"
-                    />
-                       
-                    </StackLayout>
-
+              
                     <StackLayout Orientation="Horizontal">
                         <Label Text="Status" HorizontalOptions="StartAndExpand" Margin="20,0,0,0" FontAttributes="Bold"/>
                         <Label x:Name="statusSelection" HorizontalOptions="CenterAndExpand"/>
                     </StackLayout>
+                    
                     <Label Text="Instructor's Info:" HorizontalOptions="Start" Margin="20,0,0,0" FontAttributes="Bold"/>
                     <StackLayout Orientation="Horizontal">
                         <Label Text="Name:" HorizontalOptions="StartAndExpand" Margin="20,0,0,0"/>
@@ -63,18 +56,27 @@
                         <Label Text="Email:" HorizontalOptions="StartAndExpand" Margin="20,0,0,0"/>
                         <Label x:Name="instructorsEmail" HorizontalOptions="CenterAndExpand"/>
                     </StackLayout>
-                    <Label Text="Notes:" Margin="20,0,0,0" FontAttributes="Bold"/>
-                    <Label x:Name="notes" Margin="20,0,20,0" LineBreakMode="WordWrap"/>
-                    <Button 
-                        Text="Share Notes"
-                        Style="{StaticResource shareNotesButton}"
-                        Clicked="ShareNotes_Clicked"
-                    />
+
                     <StackLayout Orientation="Horizontal">
                         <Label Text="Notifications Enabled:" HorizontalOptions="StartAndExpand" Margin="20,0,0,0"/>
                         <Label x:Name="notificationsEnabled" HorizontalOptions="CenterAndExpand"/>
                     </StackLayout>
+
+                    <Label Text="Notes:" Margin="20,0,0,0" FontAttributes="Bold"/>
+                    <Label x:Name="notes" Margin="20,0,20,0" LineBreakMode="WordWrap"/>
+                    <Button 
+                        Text="Share Notes"
+                        Style="{StaticResource listItem}"
+                        Clicked="ShareNotes_Clicked"
+                    />
+                    <Button 
+                        Text="Assessments"
+                        Style="{StaticResource listItem}"
+                        Clicked="CourseAssessments_Clicked"
+                      />
+                   
                 </StackLayout>
+                
                 <StackLayout VerticalOptions="End">
                   
                     <Button 
@@ -88,6 +90,7 @@
                         Clicked="DeleteCourse_Clicked"
                     />
                 </StackLayout>
+                
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

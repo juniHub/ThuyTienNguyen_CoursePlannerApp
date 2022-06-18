@@ -14,10 +14,15 @@ namespace ThuyTienNguyen_CoursePlannerApp
             InitializeComponent();
             VMControls.startupNotifications();
 
-            MainPage = new NavigationPage(new TermsListPage())
-            {
-                BarBackgroundColor = Color.FromHex("#002F51")
-            };
+            
+                        MainPage = new NavigationPage(new TermsListPage())
+                        {
+                            BarBackgroundColor = Color.FromHex("#002F51")
+                        };
+            
+
+           
+            
         }
 
         private void InitializeData()
@@ -65,7 +70,6 @@ namespace ThuyTienNguyen_CoursePlannerApp
 
         protected override void OnStart()
         {
-
         }
 
         protected override void OnSleep()
@@ -74,6 +78,14 @@ namespace ThuyTienNguyen_CoursePlannerApp
 
         protected override void OnResume()
         {
+           
         }
+
+     
+        
+         //   System.Diagnostics.Process.GetCurrentProcess().CloseMainWindow();
+        
+
+
     }
 }

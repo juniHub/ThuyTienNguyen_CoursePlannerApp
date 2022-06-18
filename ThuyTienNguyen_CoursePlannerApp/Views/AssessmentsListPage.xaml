@@ -11,6 +11,7 @@
             <Style x:Key="assessmentListItem" TargetType="Button" BasedOn="{StaticResource listItem}">
                 <Setter Property="FontSize" Value="Small"/>
             </Style>
+          
         </ResourceDictionary>
     </ContentPage.Resources>
     <NavigationPage.TitleView>
@@ -22,7 +23,7 @@
         </StackLayout>
     </NavigationPage.TitleView>
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout BackgroundColor="Beige">
             <StackLayout VerticalOptions="StartAndExpand">
                 <ListView
                     x:Name="AssessmentList"
@@ -47,7 +48,7 @@
             <StackLayout VerticalOptions="End">
                 <Button 
                     Text="Add Assessment (Max 2)"
-                    Style="{StaticResource regularButton}"
+                    Style="{StaticResource addButton}"
                     Clicked="AddAssessment_Clicked"
                 />
             </StackLayout>

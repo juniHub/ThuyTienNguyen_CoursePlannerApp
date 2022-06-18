@@ -2,6 +2,7 @@
 using ThuyTienNguyen_CoursePlannerApp.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.Text.RegularExpressions;
 
 namespace ThuyTienNguyen_CoursePlannerApp.Views
 {
@@ -10,6 +11,10 @@ namespace ThuyTienNguyen_CoursePlannerApp.Views
     {
         private int TermID;
         private CourseViewPage CoursePage;
+
+        Regex PhoneRegex = new Regex(@"\d{3}-\d{3}-\d{4}");
+        Regex EmailRegex = new Regex(@"\w+@wgu\.edu");
+
         public CourseFormPage(int termId)
         {
             InitializeComponent();
@@ -35,24 +40,36 @@ namespace ThuyTienNguyen_CoursePlannerApp.Views
             SaveButton.IsVisible = false;
         }
 
-        private bool isInvalidEmail(string email)
-        {
-            try
-            {
-                var addr = new System.Net.Mail.MailAddress(email);
-                return !(addr.Address == email);
-            }
-            catch
-            {
-                return true;
-            }
-        }
+      
 
-        private async void SaveButton_Clicked(object sender, EventArgs e)
+    private async void SaveButton_Clicked(object sender, EventArgs e)
         {
             try
             {
-                bool emailInvalid = isInvalidEmail(instructorEmail.Text);
+                
+
+
+                if (!PhoneRegex.IsMatch(instructorPhone.Text))
+                {
+                    throw new Exception (
+                        "Instructor phone is invalid.\n" +
+                        "Phone must match this pattern:\n" +
+                        "123-456-7890");
+                    
+                }
+
+
+                if (!EmailRegex.IsMatch(instructorEmail.Text))
+                {
+                    throw new Exception(
+                        "Instructor email is invalid.\n" +
+                        "Email must match this pattern:\n" +
+                        "name@wgu.edu");
+                     
+                   
+                }
+
+
                 if (courseTitle.Text == null || courseTitle.Text == "")
                 {
                     throw new Exception("You must have Course Title");
@@ -77,10 +94,7 @@ namespace ThuyTienNguyen_CoursePlannerApp.Views
                     throw new Exception("You must provide all of the course instructor's info (Name, Phone, Email)");
                 }
 
-                if (emailInvalid)
-                {
-                    throw new Exception("You must provide a valid email");
-                }
+              
 
                 if (courseNotes.Text == null)
                 {
@@ -113,7 +127,29 @@ namespace ThuyTienNguyen_CoursePlannerApp.Views
         {
             try
             {
-                bool emailInvalid = isInvalidEmail(instructorEmail.Text);
+               
+
+                if (!PhoneRegex.IsMatch(instructorPhone.Text))
+                {
+                    throw new Exception(
+                        "Instructor phone is invalid.\n" +
+                        "Phone must match this pattern:\n" +
+                        "123-456-7890");
+
+                }
+
+
+                if (!EmailRegex.IsMatch(instructorEmail.Text))
+                {
+                    throw new Exception(
+                        "Instructor email is invalid.\n" +
+                        "Email must match this pattern:\n" +
+                        "name@wgu.edu");
+
+
+                }
+
+
                 if (courseTitle.Text == "")
                 {
                     throw new Exception("You must have Course Title");
@@ -129,10 +165,7 @@ namespace ThuyTienNguyen_CoursePlannerApp.Views
                     throw new Exception("You must provide all of the course instructor's info (Name, Phone, Email)");
                 }
 
-                if (emailInvalid)
-                {
-                    throw new Exception("You must provide a valid email");
-                }
+              
 
                 var coursePage = CoursePage;
                 var newCourse = new Course
