@@ -52,7 +52,7 @@ namespace ThuyTienNguyen_CoursePlannerApp.Views
                 if (!PhoneRegex.IsMatch(instructorPhone.Text))
                 {
                     throw new Exception (
-                        "Instructor phone is invalid.\n" +
+                        "Instructor's phone is invalid.\n" +
                         "Phone must match this pattern:\n" +
                         "123-456-7890");
                     
@@ -62,7 +62,7 @@ namespace ThuyTienNguyen_CoursePlannerApp.Views
                 if (!EmailRegex.IsMatch(instructorEmail.Text))
                 {
                     throw new Exception(
-                        "Instructor email is invalid.\n" +
+                        "Instructor's email is invalid.\n" +
                         "Email must match this pattern:\n" +
                         "name@wgu.edu");
                      
@@ -132,7 +132,7 @@ namespace ThuyTienNguyen_CoursePlannerApp.Views
                 if (!PhoneRegex.IsMatch(instructorPhone.Text))
                 {
                     throw new Exception(
-                        "Instructor phone is invalid.\n" +
+                        "Instructor's phone is invalid.\n" +
                         "Phone must match this pattern:\n" +
                         "123-456-7890");
 
@@ -142,7 +142,7 @@ namespace ThuyTienNguyen_CoursePlannerApp.Views
                 if (!EmailRegex.IsMatch(instructorEmail.Text))
                 {
                     throw new Exception(
-                        "Instructor email is invalid.\n" +
+                        "Instructor's email is invalid.\n" +
                         "Email must match this pattern:\n" +
                         "name@wgu.edu");
 

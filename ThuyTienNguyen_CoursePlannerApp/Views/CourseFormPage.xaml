@@ -5,7 +5,7 @@
     <ContentPage.Content>
         <ScrollView>
 
-            <StackLayout BackgroundColor="Gray">
+            <StackLayout BackgroundColor="#156591">
                 <StackLayout>
                     <Label 
                         Text="Course" 

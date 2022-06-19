@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ThuyTienNguyen_CoursePlannerApp.Views.MainPage">
+
+
+    <NavigationPage.TitleView>
+
+        <StackLayout>
+
+            <StackLayout
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                >
+
+                <Image
+                        HeightRequest="48"
+                        Source="wgu_logo.png"
+                        />
+
+            </StackLayout>
+
+        </StackLayout>
+
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+
+        <StackLayout BackgroundColor="Beige">
+
+            <StackLayout VerticalOptions="Start">
+                <Label 
+                Text="Welcome to WGU Course Planner App" 
+                Style="{StaticResource pageTitle}"
+             />
+            </StackLayout>
+           
+            <StackLayout VerticalOptions="End">
+                <Button
+                    Text="Start Here"
+                    Style="{StaticResource addButton}"
+                    Clicked="Start_Clicked"
+                />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+
+

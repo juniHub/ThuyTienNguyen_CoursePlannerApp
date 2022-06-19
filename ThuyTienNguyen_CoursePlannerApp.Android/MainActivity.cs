@@ -1,13 +1,11 @@
-﻿using System;
-
-using Android.App;
+﻿using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
 
 namespace ThuyTienNguyen_CoursePlannerApp.Droid
 {
-    [Activity(Label = "ThuyTienNguyen_CoursePlannerApp", Icon = "@mipmap/ic_launcher", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize )]
+    [Activity(Label = "ThuyTienNguyen_CoursePlannerApp", Icon = "@mipmap/ic_launcher", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -27,5 +25,12 @@ namespace ThuyTienNguyen_CoursePlannerApp.Droid
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
+
+        /*
+        public override void OnBackPressed()
+        {
+           System.Diagnostics.Process.GetCurrentProcess().CloseMainWindow();
+        }
+        */
     }
 }

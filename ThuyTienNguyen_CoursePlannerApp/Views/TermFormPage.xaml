@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ThuyTienNguyen_CoursePlannerApp.Views.TermFormPage">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="Gray">
+        <StackLayout BackgroundColor="#156591">
             <StackLayout VerticalOptions="Start">
                 <Label 
                     Text="Term" 

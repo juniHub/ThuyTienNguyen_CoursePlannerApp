@@ -7,6 +7,7 @@
             <Style TargetType="Label">
                 <Setter Property="TextColor" Value="DarkBlue"/>
             </Style>
+                     
             <Style x:Key="listItem" TargetType="Button">
                 <Setter Property="BorderWidth" Value="2" />
                 <Setter Property="BorderColor" Value="DarkBlue"/>
@@ -17,16 +18,16 @@
             </Style>
             <Style x:Key="addButton" TargetType="Button">
                 <Setter Property="BorderWidth" Value="1" />
-                <Setter Property="BorderColor" Value="White"/>
+                <Setter Property="BorderColor" Value="#002F51"/>
                 <Setter Property="TextColor" Value="White" />
                 <Setter Property="FontSize" Value="Medium" />
                 <Setter Property="BackgroundColor" Value="#002F51"/>
             </Style>
             <Style x:Key="regularButton" TargetType="Button">
-                <Setter Property="BackgroundColor" Value="DarkBlue"/>
-                <Setter Property="TextColor" Value="White" />
+                <Setter Property="BackgroundColor" Value="LightBlue"/>
+                <Setter Property="TextColor" Value="DarkBlue" />
                 <Setter Property="BorderWidth" Value="1" />
-                <Setter Property="BorderColor" Value="DarkBlue"/>
+                <Setter Property="BorderColor" Value="LightBlue"/>
             </Style>
             <Style x:Key="deleteButton" TargetType="Button">
                 <Setter Property="BackgroundColor" Value="Red"/>
