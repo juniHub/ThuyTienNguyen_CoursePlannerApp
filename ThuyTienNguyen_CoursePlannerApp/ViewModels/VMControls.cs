@@ -50,6 +50,7 @@ namespace ThuyTienNguyen_CoursePlannerApp
         //VM Term Controls
         public static void initializeTermsCollection()
         {
+            Terms.Clear();
             var database = new SqliteDataService();
             database.Initialize();
             var terms = database.GetAllTerms();

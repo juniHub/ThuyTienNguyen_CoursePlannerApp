@@ -5,21 +5,12 @@
              x:Class="ThuyTienNguyen_CoursePlannerApp.Views.TermsListPage">
   
     <NavigationPage.TitleView>
-        
-        <StackLayout>
-           
-                <StackLayout
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                >
-                  
-                        <Image
-                        HeightRequest="48"
-                        Source="wgu_logo.png"
-                        />
-                  
-                </StackLayout>
-          
+
+        <StackLayout VerticalOptions="Start">
+            <Label 
+                Text="All Terms"
+                Style="{StaticResource navPageTitle}"
+             />
         </StackLayout>
 
     </NavigationPage.TitleView>
@@ -27,12 +18,7 @@
 
         <StackLayout BackgroundColor="Beige">
 
-            <StackLayout VerticalOptions="Start">
-                <Label 
-                Text="WGU Course Planner" 
-                Style="{StaticResource pageTitle}"
-             />
-            </StackLayout>
+          
             <ListView 
                 x:Name="TermsList" 
                 HasUnevenRows="True" 

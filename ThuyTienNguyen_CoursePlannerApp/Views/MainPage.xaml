@@ -3,6 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ThuyTienNguyen_CoursePlannerApp.Views.MainPage">
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="startButton" TargetType="Button">
+                <Setter Property="BorderWidth" Value="2" />
+                <Setter Property="BorderColor" Value="DarkBlue"/>
+                <Setter Property="TextColor" Value="DarkBlue" />
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="Margin" Value="7, 7, 7, 0"/>
+                <Setter Property="BackgroundColor" Value="White"/>
+            </Style>
+         
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
 
     <NavigationPage.TitleView>
 
@@ -29,17 +43,36 @@
 
             <StackLayout VerticalOptions="Start">
                 <Label 
-                Text="Welcome to WGU Course Planner App" 
+                Text="WGU Course Planner" 
+                Style="{StaticResource modalTitle}"
+             />
+            </StackLayout>
+
+            <StackLayout VerticalOptions="Start">
+                <Label 
+                Text="Welcome to" 
+                Style="{StaticResource pageTitle}"
+             />
+            </StackLayout>
+
+            <StackLayout VerticalOptions="Center">
+                <Label 
+                Text="WGU Course Planner App" 
                 Style="{StaticResource pageTitle}"
              />
             </StackLayout>
            
-            <StackLayout VerticalOptions="End">
+            <StackLayout VerticalOptions="Center">
                 <Button
                     Text="Start Here"
-                    Style="{StaticResource addButton}"
+                    Style="{StaticResource startButton}"
                     Clicked="Start_Clicked"
                 />
+            </StackLayout>
+            <StackLayout VerticalOptions="EndAndExpand">
+                
+                <Label Text="Made with Xamarin Form by Thuy Tien Nguyen" HorizontalOptions="CenterAndExpand"/>
+                
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

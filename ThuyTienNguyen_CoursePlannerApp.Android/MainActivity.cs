@@ -26,11 +26,6 @@ namespace ThuyTienNguyen_CoursePlannerApp.Droid
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 
-        /*
-        public override void OnBackPressed()
-        {
-           System.Diagnostics.Process.GetCurrentProcess().CloseMainWindow();
-        }
-        */
+      
     }
 }
