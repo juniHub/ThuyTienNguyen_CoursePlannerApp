@@ -19,6 +19,7 @@ namespace ThuyTienNguyen_CoursePlannerApp.Views
         {
             InitializeComponent();
             TermPage = termPage;
+         
             termTitle.Text = termPage.SelectedTerm.Title;
             startDateSelected.Date = termPage.SelectedTerm.StartDate;
             endDateSelected.Date = termPage.SelectedTerm.EndDate;

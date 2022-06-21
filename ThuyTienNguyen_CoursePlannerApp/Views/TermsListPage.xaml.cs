@@ -8,12 +8,14 @@ namespace ThuyTienNguyen_CoursePlannerApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TermsListPage : ContentPage
     {
+        public Term SelectedTerm { get; set; }
         public TermsListPage()
         {
             VMControls.initializeTermsCollection();
             InitializeComponent();
         }
 
+       
         private async void AddTerm_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new TermFormPage());

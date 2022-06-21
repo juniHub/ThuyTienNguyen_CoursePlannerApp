@@ -20,6 +20,7 @@ namespace ThuyTienNguyen_CoursePlannerApp.Views
 
         public void SetData(Term term)
         {
+            SelectedTerm = term;
             navTitle.Text = term.Title;
             TermDateRange.Text = $"Start date: {term.StartDate.ToString("MM-dd-yyyy", DateTimeFormatInfo.InvariantInfo)} - End date: {term.EndDate.ToString("MM-dd-yyyy", DateTimeFormatInfo.InvariantInfo)}";
         }
