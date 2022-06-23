@@ -46,31 +46,8 @@ namespace ThuyTienNguyen_CoursePlannerApp.Views
         {
             try
             {
-                
-
-
-                if (!PhoneRegex.IsMatch(instructorPhone.Text))
-                {
-                    throw new Exception (
-                        "Instructor's phone is invalid.\n" +
-                        "Phone must match this pattern:\n" +
-                        "123-456-7890");
-                    
-                }
-
-
-                if (!EmailRegex.IsMatch(instructorEmail.Text))
-                {
-                    throw new Exception(
-                        "Instructor's email is invalid.\n" +
-                        "Email must match this pattern:\n" +
-                        "name@wgu.edu");
-                     
-                   
-                }
-
-
-                if (courseTitle.Text == null || courseTitle.Text == "")
+   
+                if ( courseTitle.Text == null || courseTitle.Text == "")
                 {
                     throw new Exception("You must have Course Title");
                 }
@@ -94,7 +71,30 @@ namespace ThuyTienNguyen_CoursePlannerApp.Views
                     throw new Exception("You must provide all of the course instructor's info (Name, Phone, Email)");
                 }
 
-              
+
+
+                if (!PhoneRegex.IsMatch(instructorPhone.Text))
+                {
+                    throw new Exception(
+                        "Instructor's phone is invalid.\n" +
+                        "Phone must match this pattern:\n" +
+                        "123-456-7890");
+
+                }
+
+
+                if (!EmailRegex.IsMatch(instructorEmail.Text))
+                {
+                    throw new Exception(
+                        "Instructor's email is invalid.\n" +
+                        "Email must match this pattern:\n" +
+                        "name@wgu.edu");
+
+
+                }
+
+
+
 
                 if (courseNotes.Text == null)
                 {
@@ -117,6 +117,9 @@ namespace ThuyTienNguyen_CoursePlannerApp.Views
                 VMControls.addCourseToCourseCollection(newCourse);
                 await Navigation.PopModalAsync();
             }
+
+          
+
             catch (Exception error)
             {
                 await DisplayAlert("Alert", $"{error.Message}", "OK");
@@ -186,6 +189,9 @@ namespace ThuyTienNguyen_CoursePlannerApp.Views
                 coursePage.SetData(newCourse);
                 await Navigation.PopModalAsync();
             }
+
+           
+
             catch (Exception error)
             {
                 await DisplayAlert("Alert", $"{error.Message}", "OK");

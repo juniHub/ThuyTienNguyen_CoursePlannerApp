@@ -19,6 +19,8 @@ namespace ThuyTienNguyen_CoursePlannerApp.Views
 
         public void SetData(Assessment assessment)
         {
+
+            SelectedAssessment = assessment;
             navTitle.Text = assessment.Title;
             AssessmentDateRange.Text = $"Start date: {assessment.StartDate.ToString("MM-dd-yyyy", DateTimeFormatInfo.InvariantInfo)} - End date: {assessment.EndDate.ToString("MM-dd-yyyy", DateTimeFormatInfo.InvariantInfo)}";
             TypeSelection.Text = assessment.Type;
