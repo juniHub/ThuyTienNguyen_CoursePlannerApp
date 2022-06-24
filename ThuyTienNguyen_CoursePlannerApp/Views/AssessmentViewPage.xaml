@@ -35,7 +35,7 @@
                 <Button 
                         x:Name="DeleteButton" 
                         Style="{StaticResource deleteButton}"
-                        Text="Delete" 
+                        Text="Delete Assessment" 
                         Clicked="DeleteButton_Clicked"
                     />
             </StackLayout>
